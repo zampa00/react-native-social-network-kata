@@ -1,6 +1,11 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, Button} from 'react-native';
 
-const Home = () => <Text>Home screen</Text>;
+const Home = () => (
+  <>
+    <Text>Home screen</Text>
+    <Button title="Publish message" onPress={() => undefined} />
+  </>
+);
 
 export default Home;
