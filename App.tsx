@@ -12,14 +12,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Home from './src/components/Home';
+import PublishMessage from './src/components/PublishMessage';
+import { RouteParamList } from './src/params/Parameters';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RouteParamList>();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="PublishMessage" component={PublishMessage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
