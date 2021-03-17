@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 const PublishMessage = () => (
   <>
-    <Text>Publish message</Text>
+    <Text>Publish message screen</Text>
   </>
 );
 

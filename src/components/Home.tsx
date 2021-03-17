@@ -5,7 +5,7 @@ import { RouteStackParamList } from '../params/Parameters';
 const Home = ({navigation}:RouteStackParamList<"Home">) => (
   <>
     <Text>Home screen</Text>
-    <Button title="Publish message" onPress={() => navigation.navigate("PublishMessage")} />
+    <Button title="Publish message" onPress={() => navigation.navigate("PublishMessage")} testID="Publish message button" />
   </>
 );
 
