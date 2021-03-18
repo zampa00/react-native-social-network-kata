@@ -1,12 +1,8 @@
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-export type RouteParamList = {
+export type RootStackParamList = {
   Home: undefined,
-  PublishMessage: undefined,
+  PublishMessage: {name: string},
 }
 
-export type RouteStackParamList<T extends keyof RouteParamList> = {
-  navigation: StackNavigationProp<RouteParamList, T>;
-  route: RouteProp<RouteParamList, T>;
-}

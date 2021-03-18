@@ -1,13 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import Home from '../src/components/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createTestProps, mockNavigation } from '../jest/TestUtils';
 
-const createTestProps = (props: Object) => ({
-  navigation: {
-    navigate: jest.fn()
-  },
-  ...props
-});
+mockNavigation()
 
 describe('Home', () => {
   let props: any;
@@ -27,7 +24,7 @@ describe('Home', () => {
   });
 
   test('pressing publish message button navigate to publish message screen', () => {
-    const { queryByText, getByTestId } = render(<Home {...props}/>);
+    const { queryByText, getByTestId } = render(<NavigationContainer><Home {...props}/></NavigationContainer>);
     const buttonToClick = getByTestId("Publish message button");
 
     expect(queryByText("Publish message screen")).toBeNull;

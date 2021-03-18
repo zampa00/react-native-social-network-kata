@@ -13,16 +13,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import Home from './src/components/Home';
 import PublishMessage from './src/components/PublishMessage';
-import { RouteParamList } from './src/params/Parameters';
+import { RootStackParamList } from './src/params/Parameters';
 
-const Stack = createStackNavigator<RouteParamList>();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="PublishMessage" component={PublishMessage} />
+        <Stack.Screen name="PublishMessage" component={PublishMessage} initialParams={{name: "Luigi"}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
