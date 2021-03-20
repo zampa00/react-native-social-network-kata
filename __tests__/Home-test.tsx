@@ -31,4 +31,16 @@ describe('Home', () => {
     fireEvent.press(buttonToClick);
     expect(queryByText("Publish message screen")).not.toBeNull;
   });
+
+  test('contains a disabled button to publish message screen if no name is set', () => {
+    const { queryByText } = render(<Home {...props}/>);
+    expect(queryByText('Publish message')?.props).toHaveProperty("disabled", true)
+  });
+
+  test('button becomes enabled if some text is input', () => {
+    const { queryByText, getByTestId } = render(<Home {...props}/>);
+    const textInput = getByTestId("Name input");
+    fireEvent.changeText(textInput, "Name")
+    expect(queryByText('Publish message')?.props).toHaveProperty("disabled", false)
+  });
 });
